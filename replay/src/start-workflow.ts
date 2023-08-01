@@ -1,15 +1,15 @@
 import { Client } from '@temporalio/client';
-import { trackState } from './workflows';
+import { replayTest } from './workflows';
 
 async function run(): Promise<void> {
   const client = new Client();
 
-  const _handle = await client.workflow.start(trackState, {
+  const _handle = await client.workflow.start(replayTest, {
     taskQueue: 'state',
-    workflowId: 'state-id-1',
+    workflowId: 'runReplayId',
   });
 
-  console.log("Workflow 'state-id-0' started. You can now signal, query, or cancel it.");
+  console.log("Workflow 'runReplayId' started. You can now signal, query, or cancel it.");
 }
 
 run().catch((err) => {

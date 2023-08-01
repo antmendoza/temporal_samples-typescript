@@ -4,7 +4,7 @@ import { setValueSignal } from './workflows';
 async function run(): Promise<void> {
   const client = new Client();
 
-  const handle = client.workflow.getHandle('state-id-1');
+  const handle = client.workflow.getHandle('runReplayId');
 
   await handle.signal(setValueSignal, 'meaning-of-life', 42);
   console.log('setValueSignal sent');
