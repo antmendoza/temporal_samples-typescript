@@ -14,13 +14,13 @@ async function run() {
       args: ['♻️ Dear future self, please take out the recycling tonight. Sincerely, past you ❤️'],
       taskQueue: 'schedules',
     },
-    scheduleId: 'sample-schedule',
+    scheduleId: 'sample-scheduled4455',
     policies: {
       catchupWindow: '1 day',
       overlap: ScheduleOverlapPolicy.ALLOW_ALL,
     },
     spec: {
-      intervals: [{ every: '10s' }],
+      //intervals: [{ every: '10s' }],
       // or periodic calendar times:
       // calendars: [
       //   {
@@ -31,15 +31,15 @@ async function run() {
       //   },
       // ],
       // or a single datetime:
-      // calendars: [
-      //   {
-      //     comment: '1/1/23 at 9am',
-      //     year: 2023,
-      //     month: 1,
-      //     dayOfMonth: 1,
-      //     hour: 9,
-      //   },
-      // ],
+      calendars: [
+        {
+          comment: '1/1/23 at 9am',
+          year: 2023,
+          month: 'MARCH',
+          dayOfMonth: 19,
+          hour: 23,
+        },
+      ],
     },
   });
 

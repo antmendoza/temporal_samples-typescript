@@ -13,10 +13,23 @@ try {
       const client = await Connection.connect();
       // Workaround for describeNamespace returning even though namespace is not registered yet
       // See: https://github.com/temporalio/temporal/issues/1336
-      await client.workflowService.getWorkflowExecutionHistory({
+
+      const sres = await connection.workflowService.describeWorkflowExecution({
+        namespace="", // your namespace
+        execution= {
+          workflowId="yourWorkflowId",
+          runId= "workflowRunId"// optional, if you don't set it temporal will return the latest workflow with the given workflowId  }
+        });
+
+
+
+      await client.workflowService.describeWorkflowExecution()getWorkflowExecutionHistory({
         namespace: 'default',
         execution: { workflowId: 'fake', runId: '26323773-ab30-4442-9a20-c5640b31a7a3' },
       });
+
+
+
     } catch (err) {
       if (
         err.details &&

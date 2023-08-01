@@ -23,10 +23,10 @@ async function run({
   }
 
   const connection = await NativeConnection.connect({
-    address,
+    address: 'your service endpoint that connect to the private link',
     tls: {
-      serverNameOverride,
-      serverRootCACertificate,
+      serverNameOverride: 'hyperloop.ujvkz.tmprl.cloud',
+      //serverRootCACertificate,
       // See docs for other TLS options
       clientCertPair: {
         crt: fs.readFileSync(clientCertPath),

@@ -17,6 +17,7 @@
     "hello-world-js",
     "hello-world-mtls",
     "instrumentation",
+    "instrumentation_pino",
     "interceptors-opentelemetry",
     "logger-shared",
     "monorepo-folders",
