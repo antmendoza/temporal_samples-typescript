@@ -9,7 +9,7 @@ export async function replayTest(): Promise<void> {
   });
 
   while (workResolved === false) {
-    await condition(() => workResolved);
+    await condition(() => workResolved && false);
     await sleep('3 seconds');
   }
 }

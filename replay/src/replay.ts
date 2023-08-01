@@ -1,7 +1,13 @@
 import { Client } from '@temporalio/client';
-import { Worker } from '@temporalio/worker';
+import { DefaultLogger, Runtime, Worker } from '@temporalio/worker';
 
 export async function runReplay(): Promise<void> {
+  Runtime.install({
+    logger: new DefaultLogger('DEBUG', (entry) => {
+      console.log(entry);
+    }),
+  });
+
   const client = new Client();
 
   const namespace = 'default';
