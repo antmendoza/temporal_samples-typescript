@@ -18,3 +18,4 @@ The Client scripts are:
 1. `npm run start.watch` to start the Worker.
 1. In another shell, `npm run workflow.start` to run the Workflow.
 1. Run `npm run workflow.signal` to unblock the Workflow. Should print `setValueSignal sent`
+1. Run `npm run workflow.replay` to replay workflows from temporal server
