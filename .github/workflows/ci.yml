@@ -78,6 +78,7 @@ jobs:
             production,
             protobufs,
             query-subscriptions,
+            replay,
             saga,
             schedules,
             search-attributes,
