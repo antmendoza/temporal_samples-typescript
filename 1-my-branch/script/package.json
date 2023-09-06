@@ -1,0 +1,45 @@
+{
+  "name": "temporal-state",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc --build",
+    "build.watch": "tsc --build --watch",
+    "lint": "eslint .",
+    "start": "ts-node src/initial.ts",
+    "start.watch": "nodemon src/worker.ts",
+    "workflow.signal": "ts-node src/signal-workflow.ts",
+    "workflow.start": "ts-node src/start-workflow.ts",
+    "workflow.replay": "ts-node src/replay.ts"
+  },
+  "nodemonConfig": {
+    "execMap": {
+      "ts": "ts-node"
+    },
+    "ext": "ts",
+    "watch": [
+      "src"
+    ]
+  },
+  "dependencies": {
+    "@datadog/datadog-api-client": "^1.15.0",
+    "fs": "^0.0.1-security",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.0",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^16.11.43",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-deprecation": "^1.2.1",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  }
+}

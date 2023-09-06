@@ -1,5 +1,6 @@
 {
   "samples": [
+    "1-my-branch",
     "activities-cancellation-heartbeating",
     "activities-dependency-injection",
     "activities-examples",
@@ -17,7 +18,6 @@
     "hello-world-js",
     "hello-world-mtls",
     "instrumentation",
-    "instrumentation_custom_signature",
     "interceptors-opentelemetry",
     "logger-shared",
     "monorepo-folders",

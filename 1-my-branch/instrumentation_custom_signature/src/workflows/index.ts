@@ -1,4 +1,4 @@
-import { LoggerSinks, proxyActivities, proxySinks, Sinks } from '@temporalio/workflow';
+import {LoggerSinks, proxyActivities, proxySinks, Sinks, workflowInfo} from '@temporalio/workflow';
 import type * as activities from '../activities';
 
 export interface MyLoggerSinks extends Sinks {
