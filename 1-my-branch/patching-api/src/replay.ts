@@ -13,7 +13,8 @@ export async function runReplay(): Promise<void> {
   const namespace = 'default';
   const result = await client.workflowService.listWorkflowExecutions({
     namespace,
-    query: 'ExecutionStatus="Running" AND (WorkflowId="patching-workflows-v3" or WorkflowId="patching-workflows-vFinal")',
+    query:
+      'ExecutionStatus="Running" AND (WorkflowId="patching-workflows-v3" or WorkflowId="patching-workflows-vFinal")',
   });
 
   console.log('result length: ' + result.executions.length);
