@@ -10,7 +10,6 @@
     "start.watch": "nodemon src/worker.ts",
     "workflow": "ts-node src/client.ts",
     "workflow.replay": "ts-node src/replay.ts"
-
   },
   "nodemonConfig": {
     "execMap": {
@@ -22,10 +21,10 @@
     ]
   },
   "dependencies": {
-    "@temporalio/activity": "1.8.2",
-    "@temporalio/client": "1.8.2",
-    "@temporalio/worker": "1.8.2",
-    "@temporalio/workflow": "1.8.2",
+    "@temporalio/activity": "1.8.6",
+    "@temporalio/client": "1.8.6",
+    "@temporalio/worker": "1.8.6",
+    "@temporalio/workflow": "1.8.6",
     "axios": "0.26.0",
     "eslint": "7",
     "node-fetch": "2.x"
