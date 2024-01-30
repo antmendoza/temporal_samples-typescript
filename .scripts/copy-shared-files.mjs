@@ -1,4 +1,6 @@
 // Run with https://github.com/google/zx
+const { readFileSync } = require('fs');
+
 const STORED_SAMPLES = new Set(require('./list-of-samples.json').samples);
 
 const yaml = require('yaml');
@@ -16,6 +18,8 @@ const TSCONFIG_EXCLUDE = [
   'hello-world-js',
   'food-delivery',
   'nestjs-exchange-rates',
+  'empty',
+  'hello-world',
 ];
 const GITIGNORE_EXCLUDE = [
   'nextjs-ecommerce-oneclick',
@@ -60,6 +64,7 @@ const POST_CREATE_EXCLUDE = [
   'food-delivery',
   'search-attributes',
   'worker-versioning',
+  'empty',
 ];
 
 const PRETTIERRC_EXCLUDE = ['food-delivery'];
@@ -177,8 +182,10 @@ testProjectsNode.value.items = [];
 lintProjectsNode.value.items = [];
 
 for (const sample of samples) {
-  const hasTestScript = !!require(`../${sample}/package.json`).scripts.test;
-  const hasLintScript = !!require(`../${sample}/package.json`).scripts.lint;
+  // Don't use require, because it won't work with ESM samples
+  const packageJson = JSON.parse(readFileSync(`../${sample}/package.json`));
+  const hasTestScript = !!packageJson.scripts.test;
+  const hasLintScript = !!packageJson.scripts.lint;
 
   if (hasTestScript) {
     testProjectsNode.value.items.push(sample);
