@@ -40,6 +40,7 @@
     "state",
     "timer-examples",
     "timer-progress",
+    "update",
     "vscode-debugger",
     "worker-specific-task-queues",
     "worker-versioning"
