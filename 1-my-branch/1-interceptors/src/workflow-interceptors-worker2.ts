@@ -1,4 +1,5 @@
 import { StartChildWorkflowExecutionInput, WorkflowInterceptorsFactory } from '@temporalio/workflow';
+import { start } from 'repl';
 
 // Export the interceptors
 export const interceptors: WorkflowInterceptorsFactory = () => ({
@@ -6,7 +7,6 @@ export const interceptors: WorkflowInterceptorsFactory = () => ({
     {
       execute(input, next) {
         console.log('execute inbound ', input);
-
         const cloned = Object.assign(input, { workflowType: 'child_Workflow' }); //Note this will
         return next(cloned);
       },
