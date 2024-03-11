@@ -33,6 +33,7 @@
     "replay",
     "saga",
     "schedules",
+    "scratchpad",
     "search-attributes",
     "signals-queries",
     "sinks",
